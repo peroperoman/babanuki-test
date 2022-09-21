@@ -13,23 +13,11 @@ class Dealer():
         トランプのリストを作成。
         4種 * 13枚 + X(joker) = 計53枚 
         """
-        initial_deck = []
-        for i in range(1, 14):
-            if i == 1:
-                egara = 'A'
-            elif i == 11:
-                egara = 'J'
-            elif i == 12:
-                egara = 'Q'
-            elif i == 13:
-                egara = 'K'
-            else:
-                egara = str(i)
-
-            initial_deck.append(egara)
-
+        initial_deck = [i for i in range(2, 11)] + ['A', 'J', 'Q', 'K']
         initial_deck = initial_deck * 4
         initial_deck.append('X')
+        print(initial_deck)
+        print(len(initial_deck))
         return initial_deck
 
 
@@ -209,7 +197,7 @@ class Babanuki():
         for i, name in enumerate(self.rank):
             print(f'RANK {i+1}: {name}')
 
-### test
+## test
 # player1 = Player('中野', is_auto=False)
 # player2 = Player('田中')
 # player3 = Player('武田')
